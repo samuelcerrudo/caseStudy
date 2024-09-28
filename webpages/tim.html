@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+             crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Tim Portfolio</title>
+    <style>
+        /* Styles defined for the desktop or the bigger screen devices*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(19, 23, 20);
+}
+
+.logo {
+    padding: 0 5rem;
+}
+
+.logo .logo-heading {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s ease;
+
+    text-decoration: none;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+.menu {
+    padding: 0 5rem;
+}
+
+.hamburger {
+    display: none;
+    color: #fff;
+    font-size: 25px;
+}
+
+.cross-icon {
+    display: none;
+}
+
+.menu .menu-list {
+    display: flex;
+    list-style: none;
+}
+
+.menu-list .menu-list-items {
+    padding: 0.5rem 1rem;
+}
+
+@media screen and (min-width: 856px) and (max-width: 1024px) {
+    .menu-list .menu-list-items {
+        padding: 0.5rem 0.3rem;
+    }
+}
+
+/* Main Hero Section Styles */
+.hero {
+    background-image: url('/images/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.hero .intro {
+    text-align: center;
+    margin: 0 5rem;
+}
+
+.hero .intro-buttons {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+/* About section styles */
+.about {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(45deg, #19191a, #454747);
+    justify-content: space-between;
+    width: 100%;
+}
+
+.about .about-image {
+    width: 40%; /* Image takes 40% of the width */
+}
+
+.about .about-image img {
+    height: auto;
+    width: 100%;
+    display: block; /* Ensure the image fits its container */
+}
+
+.about .about-text {
+    width: 60%; /* Text takes the remaining 60% */
+    color: #fff;
+    padding: 5rem;
+    text-align: left;
+}
+
+.my-heading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.lead-para {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* Portfolio section styles */
+.portfolio {
+    margin: 4.8rem 0;
+    padding: 0 5rem;
+}
+
+.port-card {
+    padding: 0 !important;
+    background: none !important;
+    border: 2px solid #000;
+}
+
+.port-card .image {
+    width: 100%;
+}
+
+.port-card .image img {
+    height: 200px;
+    width: 100%;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.my-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
+
+.my-row .my-col {
+    text-align: center;
+    width: 30%;
+}
+
+
+/* Footer Styles */
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 2rem;
+}
+
+.footer-list-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    margin: 1rem 1rem 0 1rem;
+    border-radius: 50%;
+    background-color: #2d3232;
+}
+
+.footer-links {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-menu {
+    padding: 0 5rem;
+}
+
+.footer-menu .footer-menu-list {
+    display: flex;
+    list-style: none;
+}
+
+/* utility classes */
+.greet-heading {
+    font-size: 1.3rem;
+    font-weight: lighter;
+    margin: 0;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.my-heading {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #fff;
+}
+
+.sub-heading {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #ccc;
+    font-weight: lighter;
+}
+
+.sub-heading span{
+    position: relative;
+}
+
+.sub-heading span::before{
+    content: "software Developer";
+    color: #db3333;
+    animation: words 20s infinite;
+}
+
+.sub-heading span::after{
+    content: "";
+    /* background-color: black; */
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    /* border-left: 3px solid black; */
+    right: -8;
+    animation: cursor 0.6s infinite;
+}
+@keyframes cursor{
+    to{
+        border-left: 3px solid #db3333;
+    }
+}
+
+@keyframes words{
+    0%, 20%{
+        content: "Cutie";
+    }
+    21%, 40%{
+        content: "Pogi";
+    }
+    41%, 60%{
+        content: "Green Flag";
+    }
+    61%, 80%{
+        content: "Mabait";
+    }
+    81%, 100%{
+        content: "Masipag";
+    }
+}
+
+.links:hover {
+    border-bottom: 2px solid #fff;
+}
+
+.links {
+    border-bottom: 2px solid transparent;
+    transition: all 0.25s;
+    padding: 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    /* letter-spacing: 1px; */
+    border: none;
+}
+
+.common-btn {
+    background-color: #db3333;
+    color: #fff;
+    border: 2px solid #db3333;
+    transition: all 0.25s;
+}
+
+.common-btn:hover {
+    background-color: #fff;
+    color: #db3333;
+    border: 2px solid #db3333;
+    outline: none;
+}
+
+
+.heading-span {
+    font-weight: bolder;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.small-para {
+    font-size: 14px;
+    color: #fff;
+}
+
+.white-text {
+    color: #fff;
+}
+
+.blue-text {
+    color: #363D73;
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar header section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a class="logo-heading" href="index.html">Group-Portfolio</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars hamburger-icon"></i>
+                <i class="fas fa-times cross-icon"></i>
+            </div>
+            <div class="menu">
+                <ul class="menu-list">
+                    <li class="menu-list-items">
+                        <a class="links" href="#home">
+                              Home
+                          </a>
+                    </li>
+                    <li class="menu-list-items">
+                        <a class="links" href="#about">
+                              About
+                          </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main hero banner -->
+    <section id="home" class="hero">
+        <div class="intro">
+            <div class="headings">
+                <h3 class="greet-heading">Hello, I'm</h3>
+                <h1 class="my-heading">Timothy Lopez</h1>
+                <h4 class="sub-heading">
+                    Ang <span></span> ng Brgy. San Isidro, Tarlac City.
+                </h4>
+            </div>
+            <div class="intro-buttons">
+                <button class="btn common-btn">Hire Me</button>
+            </div>
+        </div>
+    </section>
+
+   <!-- About Section -->
+<section id="about" class="about">
+    <div class="about-image">
+        <img src="/images/5.png" alt="About Image">
+    </div>
+    <div class="about-text">
+        <h1 class="my-heading">About Me</h1>
+        <p class="lead-para">
+            As a passionate web designer, I specialize in creating clean, modern, and user-friendly websites that enhance brand identities and deliver exceptional user experiences. My portfolio showcases a variety of projects, including responsive designs, e-commerce platforms, and interactive landing pages. Each project reflects my commitment to quality, attention to detail, and a deep understanding of user needs. Explore my work to see how I blend creativity with functionality to bring ideas to life in the digital space.
+        </p>
+    </div>
+</section>
+
+
+   
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="footer-content text-center">
+            <h4>
+                Copyright © 2023 All rights reserved |
+                This portfolio website template is created 
+                  by GeeksforGeeks.
+            </h4>
+            <div class="social-links">
+                <div class="footer-menu">
+                    <ul class="footer-menu-list">
+                        <li class="footer-list-items">
+                            <a class="footer-links" href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="footer-list-items">
+                            <a class="footer-links" href="#">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="footer-list-items">
+                            <a class="footer-links" href="#">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="footer-list-items">
+                            <a class="footer-links" href="#">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+        integrity=
+"sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+      </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+    <!-- <section class="home">
+        <div class="home-img">
+            <img src="Tim.png" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, It's <span>Timothy Lopez</span></h1>
+            <h3 class="typing-text">I'm <span></span></h3>
+            <p>As a passionate web designer, I specialize in creating clean, modern, and user-friendly websites that enhance brand identities and deliver exceptional user experiences. My portfolio showcases a variety of projects, including responsive designs, e-commerce platforms, and interactive landing pages. Each project reflects my commitment to quality, attention to detail, and a deep understanding of user needs. Explore my work to see how I blend creativity with functionality to bring ideas to life in the digital space.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/tims.lopez30/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://github.com/Lofeyy/Group-Portfolio"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://www.instagram.com/jazztimo/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="#" class="btn">Kay Ella lang</a> -->
+        
