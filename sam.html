@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="pogi.css" />
+  </head>
+  <body>
+
+    <!-- NAV BAR -->
+    <nav id="desktop-nav">
+      <div class="logo">Samuel's Portfolio</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Samuel's Portfolio</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+
+    <!-- PROFILE SECTION-->
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/profile-pic.png"/>
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Samuel</h1>
+        <p class="section__text__p2">Information Technology Student</p>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/resume-example.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT/EXPERIENCE/EDUCATION SECTION -->
+    <section id="about">
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img
+                src="./assets/experience.png"
+                alt="Experience icon"
+                class="icon"
+              />
+              <h3>Experience</h3>
+              <br>
+              <p>Web Administrator - TSU FIlmmakers' Society <br>(2021-2022)</p><br>
+              <p>Layout Artist - The Browser <br>(2022-Present)</p><br>
+              <p>Video Editor - T4C Studio <br>(2022-Present)</p><br>
+              <p>Multimedia Officer - SSITE <br>(2024)</p>
+            </div>
+            <div class="details-container">
+              <img
+                src="./assets/education.png"
+                alt="Education icon"
+                class="icon"
+              />
+              <h3>Education</h3>
+              <br>
+              <p>BS in Information Technology Major in Web and Mobile Application - TSU</p>
+              <p>(2025)</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              My name is Samuel, and I am an Information Technology student with a passion for both design and digital media. 
+              In addition to my academic pursuits, I work as a layout artist for an organization and publication, where I 
+              specialize in designing visually appealing layouts that communicate ideas effectively. My role allows me to 
+              blend creativity with technical precision, ensuring that each project is not only aesthetically pleasing but 
+              also aligned with the publication’s goals.
+              I am also a part-time video editor for a company, where I focus on creating engaging video content. 
+              This involves everything from editing footage to adding effects and ensuring the final product tells a compelling story. 
+              My ability to balance both my creative and technical skills across different mediums is something I take pride in. Whether 
+              it’s through layout design or video editing, I enjoy transforming ideas into polished, professional work.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img
+            src="./assets/email.png"
+            alt="Email icon"
+            class="icon contact-icon email-icon"
+          />
+          <p><a>samueladrian@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Samuel Pogi. All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>
